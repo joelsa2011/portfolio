@@ -1,0 +1,1243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05080F">
+  <title>Joel Salomon | Senior IT Engineer &amp; Systems Architect</title>
+  <meta name="description" content="Joel Salomon — Senior IT Engineer &amp; Systems Architect. 17.5 years across IT, higher education and cyber security in Mauritius and Rwanda.">
+  <link rel="canonical" href="https://joelsalomon.healthyfolks.mu">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Joel Salomon | Senior IT Engineer &amp; Systems Architect">
+  <meta property="og:description" content="Joel Salomon — Senior IT Engineer &amp; Systems Architect. 17.5 years across IT, higher education and cyber security in Mauritius and Rwanda.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://joelsalomon.healthyfolks.mu">
+  <meta property="og:image" content="https://joelsalomon.healthyfolks.mu/joel_salomon_senior_it_engineer_systems_architect_v3_og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Joel Salomon | Senior IT Engineer &amp; Systems Architect">
+  <meta name="twitter:description" content="Joel Salomon — Senior IT Engineer &amp; Systems Architect. 17.5 years across IT, higher education and cyber security in Mauritius and Rwanda.">
+  <meta name="twitter:image" content="https://joelsalomon.healthyfolks.mu/joel_salomon_senior_it_engineer_systems_architect_v3_og.png">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Person","name":"Joel Salomon","jobTitle":"Senior IT Engineer & Systems Architect","url":"https://joelsalomon.healthyfolks.mu","sameAs":["https://www.linkedin.com/in/joelsalomon"],"address":{"@type":"PostalAddress","addressLocality":"Mauritius","addressCountry":"MU"}},{"@type":"WebSite","name":"Joel Salomon","url":"https://joelsalomon.healthyfolks.mu"}]}
+  </script>
+  <style id="css">
+    :root {
+      --ink: #05080F;
+      --ink-2: #070B14;
+      --surface: #0A1220;
+      --line: #16233A;
+      --cyan: #06B6D4;
+      --violet: #8B5CF6;
+      --text: #F1F5F9;
+      --muted: #94A3B8;
+      --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--ink);
+      color: var(--text);
+      font-family: var(--font-sans);
+    }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      background: var(--ink);
+      color: var(--text);
+    }
+
+    #nav,
+    main,
+    footer {
+      width: 100%;
+    }
+
+    .topo-figure {
+      max-width: 520px;
+      margin: 2rem 0 0;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 0.75rem;
+      background: var(--ink-2);
+    }
+
+    #topo {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    #topo text {
+      fill: var(--muted);
+      font: 10px var(--font-mono);
+    }
+
+    #topo-status {
+      min-height: 1.5em;
+      color: var(--muted);
+      font: 0.875rem var(--font-mono);
+    }
+
+    .topo-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .topo-node {
+      padding: 0.45rem 0.7rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      font: 0.875rem var(--font-mono);
+      cursor: pointer;
+    }
+
+    .topo-node:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+    .topo-node:focus-visible {
+      outline: 2px solid var(--violet);
+      outline-offset: 2px;
+    }
+
+    .topo-node:focus,
+    .topo-node:active {
+      animation: topo-ping 600ms ease-out;
+    }
+
+    @keyframes topo-ping {
+      from { box-shadow: 0 0 0 0 rgb(139 92 246 / 55%); }
+      to { box-shadow: 0 0 0 8px rgb(139 92 246 / 0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .topo-pkt { display: none; }
+      .topo-node:focus,
+      .topo-node:active { animation: none; }
+    }
+
+    .terminal {
+      margin-top: 1.25rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 0.75rem;
+      background: var(--ink-2);
+      font: 0.8125rem/1.65 var(--font-mono);
+    }
+
+    .terminal__run {
+      float: right;
+      padding: 0.25rem 0.7rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .terminal__run:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+    .terminal__run:focus-visible {
+      outline: 2px solid var(--violet);
+      outline-offset: 2px;
+    }
+
+    .terminal__cmd {
+      min-height: 1.65em;
+      color: var(--cyan);
+    }
+
+    .terminal__cmd::before {
+      content: "$ ";
+      color: var(--muted);
+    }
+
+    .terminal__out {
+      margin-top: 0.35rem;
+      color: var(--muted);
+      white-space: pre-wrap;
+    }
+
+    .terminal__result {
+      display: block;
+      margin-top: 0.5rem;
+      color: var(--cyan);
+    }
+
+    .terminal__result:empty {
+      display: none;
+    }
+
+    #ai-form {
+      display: grid;
+      gap: 0.6rem;
+      max-width: 640px;
+      margin-top: 1rem;
+    }
+
+    #ai-input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--line);
+      border-radius: 0.6rem;
+      background: var(--ink-2);
+      color: var(--text);
+      font: 0.9375rem/1.5 var(--font-sans);
+      resize: vertical;
+    }
+
+    #ai-input:focus-visible,
+    #ai-run:focus-visible {
+      outline: 2px solid var(--violet);
+      outline-offset: 2px;
+    }
+
+    #ai-run {
+      justify-self: start;
+      padding: 0.6rem 1.1rem;
+      border: 1px solid var(--cyan);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--cyan);
+      font: 0.875rem var(--font-mono);
+      cursor: pointer;
+    }
+
+    #ai-run:hover:not(:disabled) {
+      background: var(--surface);
+    }
+
+    #ai-run:disabled {
+      opacity: 0.55;
+      cursor: progress;
+    }
+
+    #ai-state {
+      min-height: 1.5em;
+      color: var(--muted);
+      font: 0.875rem var(--font-mono);
+    }
+
+    #ai-result {
+      margin: 0.5rem 0 0;
+      padding: 0;
+      white-space: pre-wrap;
+      color: var(--text);
+      font: 0.875rem/1.65 var(--font-mono);
+    }
+
+    #ai-result:empty {
+      display: none;
+    }
+
+    #nav-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      z-index: 50;
+    }
+
+    #to-top {
+      position: fixed;
+      right: 1.25rem;
+      bottom: 1.25rem;
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--surface);
+      color: var(--text);
+      font: 1.1rem/1 var(--font-mono);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(8px) scale(0.9);
+      transition: opacity 0.25s ease-out, transform 0.25s ease-out, border-color 0.2s ease-out, visibility 0s linear 0.25s;
+      z-index: 40;
+    }
+
+    #to-top.is-shown {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: none;
+      transition: opacity 0.25s ease-out, transform 0.25s ease-out, border-color 0.2s ease-out, visibility 0s;
+    }
+
+    #to-top:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      transform: translateY(-3px);
+    }
+
+    #to-top:focus-visible {
+      outline: 2px solid var(--violet);
+      outline-offset: 2px;
+    }
+
+    .to-top__ring {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+
+    .to-top__ring circle {
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .to-top__ring .to-top__track {
+      stroke: var(--line);
+    }
+
+    .to-top__ring .to-top__progress {
+      stroke: var(--cyan);
+      stroke-linecap: round;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #to-top,
+      #to-top:hover {
+        transition: none;
+        transform: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .js .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+      }
+
+      .js .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ---- layout & typography ---- */
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+
+    body {
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: rgb(6 182 212 / 30%);
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: var(--line);
+      text-underline-offset: 0.22em;
+    }
+
+    a:hover { color: var(--cyan); }
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--violet);
+      outline-offset: 2px;
+    }
+
+    h2 {
+      margin: 0 0 1.75rem;
+      font-size: clamp(1.65rem, 3.2vw, 2.3rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.0625rem;
+      line-height: 1.4;
+    }
+
+    p { margin: 0 0 0.9rem; }
+
+    main > section {
+      padding: clamp(3.25rem, 7vw, 5.5rem) max(1.25rem, calc((100vw - 1100px) / 2));
+      border-top: 1px solid var(--line);
+    }
+
+    main > section:first-of-type { border-top: 0; }
+
+    .skip-link {
+      position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 60;
+      padding: 0.55rem 0.9rem;
+      border: 1px solid var(--cyan);
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--text);
+      font: 0.8125rem var(--font-mono);
+      text-decoration: none;
+      transform: translateY(-200%);
+      transition: transform 0.15s ease-out;
+    }
+
+    .skip-link:focus-visible {
+      transform: none;
+    }
+
+    /* ---- nav ---- */
+    header#nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem 1.75rem;
+      padding: 0.85rem max(1.25rem, calc((100vw - 1100px) / 2));
+      border-bottom: 1px solid var(--line);
+      background: rgb(5 8 15 / 88%);
+      backdrop-filter: blur(12px);
+    }
+
+    #nav > a:first-of-type {
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+
+    #nav nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1.25rem;
+      margin-right: auto;
+    }
+
+    #nav nav a {
+      color: var(--muted);
+      font: 0.8125rem/1.6 var(--font-mono);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+
+    #nav nav a:hover { color: var(--cyan); }
+
+    .btn {
+      display: inline-block;
+      padding: 0.55rem 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font: 0.8125rem/1.35 var(--font-mono);
+      text-decoration: none;
+      transition: border-color 0.2s ease-out, background-color 0.2s ease-out, color 0.2s ease-out, transform 0.2s ease-out;
+    }
+
+    .btn--solid {
+      border-color: var(--cyan);
+      background: var(--cyan);
+      color: #04101a;
+      font-weight: 600;
+    }
+
+    .btn--solid:hover {
+      background: #22d3ee;
+      border-color: #22d3ee;
+      color: #04101a;
+      transform: translateY(-1px);
+    }
+
+    .btn--ghost {
+      color: var(--text);
+      background: transparent;
+    }
+
+    .btn--ghost:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      transform: translateY(-1px);
+    }
+
+    .nav__mail { margin-left: auto; }
+
+    /* ---- hero ---- */
+    #top {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+      padding-top: clamp(2.75rem, 7vw, 5.5rem);
+      padding-bottom: clamp(3rem, 7vw, 5.5rem);
+    }
+
+    #og { display: block; height: 0; grid-column: 1 / -1; }
+
+    .hero__copy p { max-width: 46ch; }
+
+    .hero__kicker {
+      margin-bottom: 1.1rem;
+      color: var(--cyan);
+      font: 0.78rem/1.5 var(--font-mono);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    #hero-title {
+      margin: 0 0 0.6rem;
+      font-size: clamp(2.75rem, 6.2vw, 4.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+    }
+
+    .hero__sub {
+      margin-bottom: 1.1rem;
+      color: var(--muted);
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+    }
+
+    .hero__proof { color: var(--muted); }
+
+    .hero__cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.6rem;
+    }
+
+    .topo-figure { justify-self: end; margin-top: 0; }
+
+    /* ---- metrics ---- */
+    #metrics ul {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin: 0;
+      padding: 1px;
+      list-style: none;
+      border: 1px solid var(--line);
+      border-radius: 0.9rem;
+      background: var(--line);
+      overflow: hidden;
+    }
+
+    #metrics li {
+      padding: 1.4rem 1.3rem;
+      background: var(--ink-2);
+      color: var(--muted);
+      font: 0.8125rem/1.5 var(--font-mono);
+    }
+
+    #metrics [data-count] {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--text);
+      font: 700 clamp(1.6rem, 3vw, 2.2rem)/1.1 var(--font-mono);
+      letter-spacing: -0.02em;
+    }
+
+    /* ---- cards ---- */
+    #work,
+    #services,
+    #certs,
+    #education {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.1rem;
+      align-content: start;
+    }
+
+    #work > h2,
+    #services > h2,
+    #certs > h2,
+    #education > h2 { grid-column: 1 / -1; margin-bottom: 0.6rem; }
+
+    #work article,
+    #services article,
+    #certs article,
+    #education article {
+      padding: 1.4rem 1.45rem;
+      border: 1px solid var(--line);
+      border-radius: 0.9rem;
+      background: linear-gradient(180deg, var(--surface), var(--ink-2));
+    }
+
+    #work article {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    #work article p:last-of-type { margin-bottom: 0; }
+
+    #work .terminal { margin-top: auto; }
+
+    #certs article p,
+    #education article p {
+      margin: 0;
+      color: var(--muted);
+      font: 0.8125rem/1.5 var(--font-mono);
+    }
+
+    /* ---- lab ---- */
+    #lab p { max-width: 60ch; color: var(--muted); }
+
+    /* ---- experience ---- */
+    #experience article {
+      position: relative;
+      margin: 0 0 1.6rem;
+      padding: 0 0 1.4rem 1.5rem;
+      border-left: 1px solid var(--line);
+    }
+
+    #experience article::before {
+      content: "";
+      position: absolute;
+      left: -4.5px;
+      top: 0.45rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+    }
+
+    #experience article > p {
+      margin: 0 0 0.5rem;
+      color: var(--muted);
+      font: 0.8125rem/1.65 var(--font-mono);
+    }
+
+    #experience article ul {
+      margin: 0.4rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    #experience details {
+      margin: 0.5rem 0 2rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 0.75rem;
+      background: var(--ink-2);
+    }
+
+    #experience summary {
+      cursor: pointer;
+      color: var(--text);
+      font: 0.875rem var(--font-mono);
+    }
+
+    #experience details ul {
+      margin: 0.9rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    #experience > div {
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 0.9rem;
+      background: var(--surface);
+    }
+
+    #experience > div ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    #experience > div li {
+      padding: 0.35rem 0.7rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font: 0.75rem/1.6 var(--font-mono);
+    }
+
+    /* ---- testimonial ---- */
+    #testimonial blockquote {
+      margin: 0;
+      padding-left: clamp(1rem, 3vw, 1.75rem);
+      border-left: 2px solid var(--cyan);
+      max-width: 68ch;
+    }
+
+    #testimonial blockquote p { color: var(--text); }
+
+    #testimonial blockquote footer {
+      width: auto;
+      padding: 0;
+      border: 0;
+      color: var(--muted);
+      font: 0.8125rem var(--font-mono);
+    }
+
+    /* ---- contact ---- */
+    #contact p {
+      display: inline-block;
+      margin: 0 0.5rem 0.5rem 0;
+    }
+
+    /* ---- footer ---- */
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem 1.5rem;
+      padding: 1.5rem max(1.25rem, calc((100vw - 1100px) / 2));
+      border-top: 1px solid var(--line);
+      background: var(--ink);
+    }
+
+    footer p {
+      margin: 0;
+      color: var(--muted);
+      font: 0.75rem/1.6 var(--font-mono);
+    }
+
+    /* ---- responsive ---- */
+    @media (max-width: 1024px) {
+      #top { grid-template-columns: 1fr; }
+      .topo-figure { justify-self: start; max-width: 480px; }
+      .hero__copy p { max-width: 60ch; }
+    }
+
+    @media (max-width: 768px) {
+      #metrics ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      #work, #services, #certs, #education { grid-template-columns: 1fr; }
+      .nav__mail { margin-left: 0; }
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 15px; }
+      #metrics ul { grid-template-columns: 1fr; }
+      .hero__cta .btn { flex: 1 1 auto; text-align: center; }
+      #nav { gap: 0.5rem 1rem; }
+      #nav nav { gap: 0.25rem 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#top">Skip to content</a>
+  <header id="nav">
+    <div id="nav-progress" aria-hidden="true"></div>
+    <a href="#top">Joel Salomon</a>
+    <nav aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--ghost nav__mail" href="mailto:joelsa2011@gmail.com?subject=Project%20enquiry">Email</a>
+  </header>
+  <main>
+    <section id="top" class="reveal" aria-labelledby="hero-title">
+      <span id="og" aria-hidden="true"></span>
+      <div class="hero__copy">
+        <p class="hero__kicker">INFRA · SECURITY · AUTOMATION — MAURITIUS / RWANDA</p>
+        <h1 id="hero-title">Joel Salomon</h1>
+        <p class="hero__sub">Senior IT Engineer &amp; Systems Architect</p>
+        <p class="hero__proof">17.5 years across IT, higher education and cyber security — from Forti firewalls to Google Workspace fleets and self-hosted platforms.</p>
+        <p class="hero__cta"><a class="btn btn--solid" href="#contact">Book a consult</a><a class="btn btn--ghost" href="#work">See the work</a></p>
+      </div>
+      <figure class="topo-figure">
+        <svg id="topo" viewBox="0 0 260 120" aria-hidden="true">
+          <path d="M28 92 L120 48 L236 30" fill="none" stroke="var(--line)" stroke-width="2" />
+          <path d="M28 92 L236 30" fill="none" stroke="var(--line)" stroke-width="1" stroke-dasharray="4 4" />
+          <circle cx="28" cy="92" r="6" fill="var(--cyan)" />
+          <circle cx="120" cy="48" r="6" fill="var(--violet)" />
+          <circle cx="236" cy="30" r="6" fill="var(--cyan)" />
+          <text x="28" y="110" text-anchor="middle">gw-01</text>
+          <text x="120" y="66" text-anchor="middle">core-sw</text>
+          <text x="236" y="48" text-anchor="end">vlan10</text>
+          <circle class="topo-pkt" r="2.5" fill="var(--text)">
+            <animateMotion dur="2.4s" repeatCount="indefinite" path="M28,92 L120,48 L236,30" />
+          </circle>
+        </svg>
+        <div class="topo-controls" id="topo-controls" role="group" aria-label="Topology nodes">
+          <button type="button" class="topo-node" data-node="gw-01">gw-01</button>
+          <button type="button" class="topo-node" data-node="core-sw">core-sw</button>
+          <button type="button" class="topo-node" data-node="vlan10">vlan10</button>
+        </div>
+        <p id="topo-status" role="status" aria-live="polite">select a node to ping</p>
+        <figcaption>Illustrative topology — not live telemetry.</figcaption>
+      </figure>
+    </section>
+
+    <section id="metrics" class="reveal" aria-labelledby="metrics-title">
+      <h2 id="metrics-title">At a glance</h2>
+      <ul>
+        <li><span data-count="17.5">17.5</span> years experience</li>
+        <li><span data-count="5">5</span> core roles</li>
+        <li><span data-count="5">5</span> certifications</li>
+        <li><span data-count="2">2</span> countries (MU/RW)</li>
+      </ul>
+    </section>
+
+    <section id="work" class="reveal" aria-labelledby="work-title">
+      <h2 id="work-title">Selected work</h2>
+      <article>
+        <h3>Healthy Folks</h3>
+        <p>End-to-end web engineering and digital presence consultancy crafted to establish an inviting, trustworthy, and conversion-focused online brand identity for Healthy Folks in Mauritius.</p>
+        <div class="terminal" data-case="healthy-folks" aria-live="polite"><button class="terminal__run" data-case="healthy-folks" type="button">run</button><div class="terminal__cmd"></div><div class="terminal__out"></div><span class="terminal__result"></span></div>
+      </article>
+      <article>
+        <h3>La Terrasse</h3>
+        <p>Bespoke commercial web platform built to showcase La Terrasse’s offerings with responsive design, intuitive visitor flow, and reliable cloud infrastructure.</p>
+        <div class="terminal" data-case="la-terrasse" aria-live="polite"><button class="terminal__run" data-case="la-terrasse" type="button">run</button><div class="terminal__cmd"></div><div class="terminal__out"></div><span class="terminal__result"></span></div>
+      </article>
+      <article>
+        <h3>Integration Pipeline</h3>
+        <p>API Integration Bus (Middleware): Orchestrates event routing, retries, data transformation, and authentication between external apps and internal systems without vendor lock-in.</p>
+        <p>ERP &amp; CRM Core: Synchronizes inventory levels, customer records, invoices, and sales pipelines in real time so sales and operations never work off stale spreadsheets.</p>
+        <p>Ticketing &amp; Dispatch System: Automatically creates prioritized support or field-engineer tickets with SLA timers and pushes live status updates back to the Customer Portal.</p>
+        <div class="terminal" data-case="pipeline" aria-live="polite"><button class="terminal__run" data-case="pipeline" type="button">run</button><div class="terminal__cmd"></div><div class="terminal__out"></div><span class="terminal__result"></span></div>
+      </article>
+    </section>
+
+    <section id="services" class="reveal" aria-labelledby="services-title">
+      <h2 id="services-title">Services</h2>
+      <article>
+        <h3>Zero-Noise Network &amp; VLAN Segmentation</h3>
+        <p>Eliminating signal interference, extending coverage cleanly, and isolating IoT, CCTV, guest, and corporate traffic.</p>
+      </article>
+      <article>
+        <h3>Self-Hosted Open-Source Data Sovereignty</h3>
+        <p>Own your automation, documents, and telemetry on private infrastructure—eliminating recurring SaaS lock-in.</p>
+      </article>
+      <article>
+        <h3>Cyber Audit, DRP, CCTV &amp; Hardware Care</h3>
+        <p>Vulnerability remediation, tested Disaster Recovery Plans (DRP), surveillance &amp; alarm setup, and precision workstation/server repair.</p>
+      </article>
+      <article>
+        <h3>Custom WebApps, ERP/CRM &amp; Ticketing Integrations</h3>
+        <p>Backend web application engineering connecting websites seamlessly with ERP, CRM, ticketing platforms, and bespoke customer portals.</p>
+      </article>
+      <article>
+        <h3>Automations &amp; AI Consultancy</h3>
+        <p>Business process audits, workflow automation, and practical AI integration to eliminate manual bottlenecks and reclaim team hours.</p>
+      </article>
+      <article>
+        <h3>Ticketing &amp; Dispatch System</h3>
+        <p>Automatically creates prioritized support or field-engineer tickets with SLA timers and pushes live status updates back to the Customer Portal.</p>
+      </article>
+    </section>
+
+    <section id="lab" class="reveal" aria-labelledby="lab-title">
+      <h2 id="lab-title">Integrations lab</h2>
+      <p>Describe your IT or automation challenge and get a deployment outline. The advisor runs on my own self-hosted infrastructure — no account, no key in this page.</p>
+      <form id="ai-form">
+        <label for="ai-input">Describe your IT or automation challenge</label>
+        <textarea id="ai-input" rows="3" placeholder="e.g. segment a campus network into staff, guest and IoT VLANs"></textarea>
+        <button id="ai-run" type="submit">Generate outline</button>
+      </form>
+      <noscript><p>The advisor needs JavaScript — email or WhatsApp me instead.</p></noscript>
+      <p id="ai-state" role="status" aria-live="polite"></p>
+      <pre id="ai-result"></pre>
+    </section>
+
+    <section id="experience" class="reveal" aria-labelledby="experience-title">
+      <h2 id="experience-title">Experience</h2>
+      <article>
+        <h3>African Leadership University — IT Engineer Senior Associate</h3>
+        <p><time datetime="2023-10-01" title="Oct 2023 – Present">Oct 2023</time> – Present</p>
+        <p>Mauritius, Rwanda</p>
+        <ul>
+          <li>Level 2 and Level 3 support</li>
+          <li>Google Workspace Administrator</li>
+          <li>Lead team of Associate and interns</li>
+          <li>Project documentation</li>
+          <li>Administer Enterprise platforms and services</li>
+        </ul>
+      </article>
+      <article>
+        <h3>African Leadership University — IT Support Engineer</h3>
+        <p><time datetime="2021-01-01" title="Jan 2021 – Oct 2023">Jan 2021</time> – Oct 2023</p>
+        <p>Pamplemousses, Mauritius</p>
+        <ul>
+          <li>Level 1 for hardware support</li>
+          <li>Support company provided applications</li>
+          <li>Manage Zendesk account ticketing system</li>
+          <li>Manage a Tech Support intern</li>
+          <li>Support to staffs, students and visitors</li>
+        </ul>
+      </article>
+      <article>
+        <h3>Masterkey Services Ltd — Tech Support Lead</h3>
+        <p><time datetime="2018-01-01" title="Jan 2018 – Dec 2020">Jan 2018</time> – Dec 2020</p>
+        <ul>
+          <li>Local WiFi network (surveys and checks)</li>
+          <li>Manage Internet and local network for devices including printers and cast devices</li>
+          <li>Manage tech equipment in offices and classrooms (projectors, sound systems, cast devices)</li>
+          <li>Administer tech tickets and software interventions for the Campus</li>
+          <li>Manage security cameras</li>
+          <li>Manage door access control</li>
+          <li>Manage equipment checks and setups for events on Campus</li>
+        </ul>
+      </article>
+      <article>
+        <h3>Leal Communications &amp; Informatics Ltd — Junior IT Engineer</h3>
+        <p><time datetime="2015-10-01" title="Oct 2015 – Dec 2016">Oct 2015</time> – Dec 2016</p>
+        <ul>
+          <li>Keep client computing infrastructure secure and efficient</li>
+          <li>Individual training and support per ticketing system</li>
+          <li>Maintain IT assets and inventories</li>
+          <li>Install, configure, patch, upgrade and maintain Windows, macOS and Linux workstations</li>
+          <li>Monitor and configure Forti network (wired and wireless)</li>
+          <li>Generate reports for clients and internal use</li>
+          <li>Repair and replace hardware/software</li>
+        </ul>
+      </article>
+      <article>
+        <h3>Rodrigues Duty Free Paradise Ltd (RDFP) — Tech Support</h3>
+        <p><time datetime="2011-01-01" title="Jan 2011 – Jan 2015">Jan 2011</time> – Jan 2015</p>
+        <p>Rodrigues</p>
+        <ul>
+          <li>Create, modify and change domain users</li>
+          <li>Virtual server environment</li>
+          <li>Provide support to dedicated application</li>
+          <li>Regular check of automated backup of OS and server data</li>
+          <li>Individual training and support</li>
+          <li>Maintain IT assets</li>
+          <li>Installation, configuration, patching and upgrading of Windows</li>
+        </ul>
+      </article>
+      <details>
+        <summary>Earlier &amp; concurrent</summary>
+        <ul>
+          <li>Tekoma Boutik Hotel (Jan 2013 – Dec 2015) — CRM support, management and client wifi</li>
+          <li>Gercora Multiservice — web design, 2018–20</li>
+          <li>National Empowerment Foundation — file server/network security, 2011–14</li>
+        </ul>
+      </details>
+      <div>
+        <h3>Skills</h3>
+        <ul>
+          <li>Google Workspace Administration</li>
+          <li>Linux Administration</li>
+          <li>Forti Network (wired &amp; wireless)</li>
+          <li>Zendesk Ticketing</li>
+          <li>802.1X &amp; VLAN Segmentation</li>
+          <li>WordPress &amp; Elementor</li>
+          <li>HTML/CSS</li>
+          <li>Basic Python</li>
+          <li>Batch file scripting</li>
+          <li>Project management</li>
+          <li>Support Tickets</li>
+          <li>Troubleshooting</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="certs" class="reveal" aria-labelledby="certs-title">
+      <h2 id="certs-title">Certifications</h2>
+      <article><h3>Google Connect and Protect: Networks and Network Security</h3><p>Oct 2024</p></article>
+      <article><h3>Google Tools of the Trade: Linux and SQL</h3><p>Mar 2025</p></article>
+      <article><h3>Google Assets, Threats, and Vulnerabilities</h3><p>Apr 2025</p></article>
+      <article><h3>Google Workspace for IT Admins</h3></article>
+      <article><h3>CompTIA A+ Certified Professional</h3></article>
+    </section>
+
+    <section id="education" class="reveal" aria-labelledby="education-title">
+      <h2 id="education-title">Education</h2>
+      <article><h3>Rodrigues College</h3><p><time datetime="1997-01-01" title="Jan 1997 – Dec 2004">Jan 1997</time> – Dec 2004</p></article>
+      <article><h3>Datamtics Computer Training Center</h3><p>Computer Maintenance and repair</p></article>
+    </section>
+
+    <section id="testimonial" class="reveal" aria-labelledby="testimonial-title">
+      <h2 id="testimonial-title">What colleagues say</h2>
+      <blockquote>
+        <p>I've had the privilege of working alongside Joel Salomon as a finance lead at ALU, and I can confidently say he is one of the most dedicated and knowledgeable IT professionals I've encountered. Our collaboration has highlighted the critical value of IT and finance working hand-in-hand. Joel's understanding of how technology investments impact financial outcomes has helped us make smarter decisions and maximize value from digital initiatives. His calm, solutions-focused mindset and ability to anticipate challenges have made him a trusted partner and a catalyst for innovation. I highly recommend Joel to any organization seeking a seasoned Senior IT Support Engineer who not only excels technically but also understands the importance of cross-functional collaboration in achieving institutional goals.</p>
+        <footer>Finance Lead, ALU</footer>
+      </blockquote>
+    </section>
+
+    <section id="contact" class="reveal" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p><a class="btn btn--solid" href="mailto:joelsa2011@gmail.com?subject=Project%20enquiry">Email joelsa2011@gmail.com</a></p>
+      <p><a class="btn btn--ghost" href="https://wa.me/23057459238">WhatsApp +230 57 45 92 38</a></p>
+      <p><a class="btn btn--ghost" href="https://www.linkedin.com/in/joelsalomon">LinkedIn</a></p>
+    </section>
+  </main>
+  <footer>
+    <p>© <span id="footer-year"></span> Joel Salomon</p>
+    <p>Mauritius · one HTML file, no dependencies</p>
+  </footer>
+  <button id="to-top" type="button" aria-label="Back to top">
+    <svg class="to-top__ring" viewBox="0 0 48 48" aria-hidden="true">
+      <circle class="to-top__track" cx="24" cy="24" r="22"></circle>
+      <circle class="to-top__progress" cx="24" cy="24" r="22" stroke-dasharray="138.23" stroke-dashoffset="138.23"></circle>
+    </svg>
+    <span aria-hidden="true">↑</span>
+  </button>
+  <script>
+    document.documentElement.classList.add('js');
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    const topologyTimes = { 'gw-01': '2.4', 'core-sw': '0.8', vlan10: '3.1' };
+    function pingNode(node) {
+      const time = topologyTimes[node];
+      if (!time) return;
+      document.getElementById('topo-status').textContent = `${node} · ${time} ms · 0% loss`;
+    }
+    document.getElementById('topo-controls').addEventListener('click', (event) => {
+      const button = event.target.closest('[data-node]');
+      if (button) pingNode(button.dataset.node);
+    });
+
+    const terminalCases = {
+      'healthy-folks': {
+        cmd: 'deploy --site healthy-folks --target prod',
+        lines: [
+          'scope    SMB Digital Presence',
+          'build    Brand Web Platform',
+          'service  CX Consultancy',
+          'result   inviting, trustworthy, and conversion-focused online brand identity',
+        ],
+        result: '\u2713 done',
+      },
+      'la-terrasse': {
+        cmd: 'deploy --site la-terrasse --target prod',
+        lines: [
+          'scope    Commercial Web Experience',
+          'build    Online Presence',
+          'journey  Customer Journey',
+          'result   responsive design, intuitive visitor flow, and reliable cloud infrastructure',
+        ],
+        result: '\u2713 done',
+      },
+      pipeline: {
+        cmd: 'pipeline --event customer_portal.order.confirmed',
+        lines: [
+          'portal     POST /api/v2/orders',
+          'bus        VALIDATED & ROUTED',
+          'erpcrm     INVOICE + STOCK LOCKED',
+          'ticketing  FULFILLMENT TASK #409',
+          'vault      LEDGER SNAPSHOT SAVED',
+        ],
+        result: '\u2713 16 ms',
+      },
+    };
+    let terminalRun = 0;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function runCase(root) {
+      const entry = terminalCases[root.dataset.case];
+      if (!entry) return;
+      const cmdEl = root.querySelector('.terminal__cmd');
+      const outEl = root.querySelector('.terminal__out');
+      const resultEl = root.querySelector('.terminal__result');
+      const token = ++terminalRun;
+      cmdEl.textContent = '';
+      outEl.replaceChildren();
+      resultEl.textContent = '';
+
+      function finish() {
+        if (token !== terminalRun) return;
+        cmdEl.textContent = entry.cmd;
+        outEl.replaceChildren(...entry.lines.map((line) => {
+          const row = document.createElement('div');
+          row.textContent = line;
+          return row;
+        }));
+        resultEl.textContent = entry.result;
+      }
+
+      if (reduceMotion.matches) {
+        finish();
+        return;
+      }
+
+      let typed = 0;
+      function typeCommand() {
+        if (token !== terminalRun) return;
+        cmdEl.textContent = entry.cmd.slice(0, ++typed);
+        if (typed < entry.cmd.length) {
+          setTimeout(typeCommand, 12);
+          return;
+        }
+        let lineIndex = 0;
+        function streamLine() {
+          if (token !== terminalRun) return;
+          if (lineIndex >= entry.lines.length) {
+            resultEl.textContent = entry.result;
+            return;
+          }
+          const row = document.createElement('div');
+          row.textContent = entry.lines[lineIndex++];
+          outEl.appendChild(row);
+          setTimeout(streamLine, 180);
+        }
+        streamLine();
+      }
+      typeCommand();
+    }
+
+    document.getElementById('work').addEventListener('click', (event) => {
+      const button = event.target.closest('.terminal__run');
+      if (!button) return;
+      const root = button.closest('.terminal');
+      if (root) runCase(root);
+    });
+
+    const AI_ENDPOINT = new URL('ai/generate', document.baseURI).href;
+    const aiForm = document.getElementById('ai-form');
+    const aiInput = document.getElementById('ai-input');
+    const aiRun = document.getElementById('ai-run');
+    const aiState = document.getElementById('ai-state');
+    const aiResult = document.getElementById('ai-result');
+
+    async function askAdvisor(prompt, { signal } = {}) {
+      const response = await fetch(AI_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt }),
+        signal,
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      const text = typeof data?.text === 'string' ? data.text : '';
+      if (!text) throw new Error('empty response');
+      return text;
+    }
+
+    aiForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const prompt = aiInput.value.trim();
+      if (!prompt) {
+        aiState.textContent = 'Describe a challenge first.';
+        return;
+      }
+      aiRun.disabled = true;
+      aiState.textContent = 'Generating outline…';
+      aiResult.textContent = '';
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 3000);
+      try {
+        aiResult.textContent = await askAdvisor(prompt, { signal: controller.signal });
+        aiState.textContent = '';
+      } catch (error) {
+        aiState.textContent = "Needs a connection — try again when you're online.";
+        console.info('AI advisor unavailable:', error?.message || error);
+      } finally {
+        clearTimeout(timeout);
+        aiRun.disabled = false;
+      }
+    });
+
+    const revealBlocks = [...document.querySelectorAll('.reveal')];
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.15 });
+    revealBlocks.forEach((block) => revealObserver.observe(block));
+
+    function countUp(element) {
+      const target = Number(element.dataset.count);
+      const decimals = String(element.dataset.count).includes('.') ? 1 : 0;
+      if (reduceMotion.matches) {
+        element.textContent = String(element.dataset.count);
+        return;
+      }
+      const started = performance.now();
+      function frame(now) {
+        const progress = Math.min((now - started) / 1200, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        element.textContent = (target * eased).toFixed(decimals);
+        if (progress < 1) {
+          requestAnimationFrame(frame);
+        } else {
+          element.textContent = String(element.dataset.count);
+        }
+      }
+      requestAnimationFrame(frame);
+    }
+
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        countObserver.unobserve(entry.target);
+        countUp(entry.target);
+      });
+    }, { threshold: 0.4 });
+    document.querySelectorAll('[data-count]').forEach((element) => countObserver.observe(element));
+
+    const progressBar = document.getElementById('nav-progress');
+    const toTop = document.getElementById('to-top');
+    const ringProgress = toTop.querySelector('.to-top__progress');
+    const ringLength = 2 * Math.PI * 22;
+    function updateScrollProgress() {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
+      progressBar.style.width = `${ratio * 100}%`;
+      ringProgress.style.strokeDashoffset = `${ringLength * (1 - ratio)}`;
+      toTop.classList.toggle('is-shown', window.scrollY > window.innerHeight * 0.6);
+    }
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    let topScrollToken = 0;
+    toTop.addEventListener('click', () => {
+      if (reduceMotion.matches) {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        return;
+      }
+      const token = ++topScrollToken;
+      const from = window.scrollY;
+      const started = performance.now();
+      function frame(now) {
+        if (token !== topScrollToken) return;
+        const progress = Math.min((now - started) / 500, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        window.scrollTo({ top: Math.round(from * (1 - eased)), behavior: 'instant' });
+        if (progress < 1) {
+          requestAnimationFrame(frame);
+        } else {
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+      }
+      requestAnimationFrame(frame);
+    });
+    updateScrollProgress();
+  </script>
+</body>
+</html>
