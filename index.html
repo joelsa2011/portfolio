@@ -1150,7 +1150,7 @@
       aiState.textContent = 'Generating outline…';
       aiResult.textContent = '';
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 3000);
+      const timeout = setTimeout(() => controller.abort(), 20000);
       try {
         aiResult.textContent = await askAdvisor(prompt, { signal: controller.signal });
         aiState.textContent = '';
